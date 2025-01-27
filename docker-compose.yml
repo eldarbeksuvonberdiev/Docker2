@@ -18,7 +18,7 @@ services:
     volumes:
       - ./src:/var/www/withDocker
   mysql:
-    image: mysql:8.0
+    image: mysql:8.0-slim
     ports:
       - "3316:3306"
     environment:
