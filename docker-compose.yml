@@ -18,7 +18,7 @@ services:
     volumes:
       - ./src:/var/www/withDocker
   mysql:
-    image: mysql:8.0-alpine
+    image: mysql/mysql-server:8.0
     ports:
       - "3316:3306"
     environment:
