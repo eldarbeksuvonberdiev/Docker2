@@ -21,8 +21,11 @@ services:
     image: mysql:8.0
     ports:
       - "3316:3306"
-    env_file:
-      - env/mysql.env
+    environment:
+      MYSQL_DATABASE: laravel_db
+      MYSQL_USER: laravel
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
 
   composer:
     build:
