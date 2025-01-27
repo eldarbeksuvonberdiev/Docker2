@@ -33,6 +33,7 @@ services:
       dockerfile: composer.Dockerfile
     volumes:
       - ./src:/var/www/withDocker
+    command: install --ignore-platform-reqs
   artisan:
     build:
       context: dockerfiles
