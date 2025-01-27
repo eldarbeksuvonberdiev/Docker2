@@ -7,7 +7,7 @@ services:
       - "8010:80"
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
-      - ./src:/var/www/laravel
+      - ./src:/var/www/withDocker
     depends_on:
       - mysql
       - php
@@ -16,7 +16,7 @@ services:
       context: dockerfiles
       dockerfile: php.Dockerfile
     volumes:
-      - ./src:/var/www/laravel
+      - ./src:/var/www/withDocker
   mysql:
     image: mysql:8.0
     ports:
@@ -29,10 +29,10 @@ services:
       context: dockerfiles
       dockerfile: composer.Dockerfile
     volumes:
-      - ./src:/var/www/laravel
+      - ./src:/var/www/withDocker
   artisan:
     build:
       context: dockerfiles
       dockerfile: php.Dockerfile
     volumes:
-      - ./src:/var/www/laravel
+      - ./src:/var/www/withDocker
