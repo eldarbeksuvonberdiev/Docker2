@@ -18,7 +18,7 @@ services:
     volumes:
       - ./src:/var/www/laravel
   mysql:
-    image: mysql:8.0
+    image: mysql:5.7
     ports:
       - "3316:3306"
     env_file:
